@@ -1,0 +1,34 @@
+version: "3"
+services:
+    api:
+        container_name: "clean_archtecture_api"
+        build: .
+        volumes:
+        - .:/go/src/api
+        ports:
+        - '8000:8000'
+        env_file:
+        - .env
+        depends_on:
+        - db
+        command: air
+    db:
+        container_name: clean-archtecture-db
+        image: postgres:15.2-alpine
+        volumes:
+        - dbdata:/var/lib/postgresql/data
+        env_file:
+        - .env
+        tty: true
+    adminer:
+        container_name: clean-archtecture-adminer
+        image: adminer:4.7.5
+        restart: always
+        ports:
+        - "8080:8080"
+        depends_on:
+        - db
+
+volumes:
+    dbdata:
+        name: fiber-muscles-dev
