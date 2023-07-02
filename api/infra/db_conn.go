@@ -1,8 +1,9 @@
-package postgres
+package infra
 
 import (
 	"fmt"
 	"go-clean-archtecture/api/config"
+	"go-clean-archtecture/api/domain/model"
 	"log"
 
 	"gorm.io/driver/postgres"
@@ -35,4 +36,16 @@ func postgresConnInfo(postgresInfo config.PostgresEnv)string{
 		postgresInfo.DbPort,
 	)
 	return databaseSourceName
+}
+
+func MigrateDatabase()(){
+	conf := config.LoadEnv()
+	dsn := postgresConnInfo(*conf.PostgresEnv)
+	Psql, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	if err != nil{
+		log.Fatal(err)
+	}
+	if err :=Psql.AutoMigrate(&model.User{});err != nil{
+		log.Fatal(err)
+	}
 }

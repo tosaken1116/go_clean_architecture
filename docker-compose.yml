@@ -6,12 +6,11 @@ services:
         volumes:
         - .:/go/src/api
         ports:
-        - '8000:8000'
+        - '8000:8080'
         env_file:
         - .env
         depends_on:
         - db
-        command: air
     db:
         container_name: clean-archtecture-db
         image: postgres:15.2-alpine
