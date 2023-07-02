@@ -10,7 +10,7 @@ CREATE TYPE "following_state" AS ENUM (
 );
 
 CREATE TABLE "users" (
-  "id" number(17) PRIMARY KEY,
+  "id" uuid PRIMARY KEY,
   "screen_id" varchar(14) UNIQUE,
   "password_hash" varchar,
   "user_name" varchar,
@@ -24,7 +24,7 @@ CREATE TABLE "tweets" (
   "id" uuid PRIMARY KEY,
   "description" varchar(200),
   "tweet_user" uuid,
-  "activity" number DEFAULT 0,
+  "activity" int DEFAULT 0,
   "created_at" timestamp,
   "deleted_at" timestamp,
   "reply_to" uuid DEFAULT null

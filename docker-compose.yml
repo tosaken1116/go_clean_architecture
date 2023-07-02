@@ -16,6 +16,8 @@ services:
         image: postgres:15.2-alpine
         volumes:
         - dbdata:/var/lib/postgresql/data
+        - ./db/init:/docker-entrypoint-initdb.d
+
         env_file:
         - .env
         tty: true
@@ -30,4 +32,4 @@ services:
 
 volumes:
     dbdata:
-        name: fiber-muscles-dev
+        name: go_clean_archtecture
