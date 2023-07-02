@@ -2,8 +2,8 @@ package infra
 
 import (
 	"fmt"
-	"go-clean-archtecture/api/config"
-	"go-clean-archtecture/api/domain/model"
+	"go-clean-architecture/api/config"
+	"go-clean-architecture/api/domain/model"
 	"log"
 
 	"gorm.io/driver/postgres"

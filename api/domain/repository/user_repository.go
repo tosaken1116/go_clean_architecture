@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"go-clean-archtecture/api/domain/model"
+	"go-clean-architecture/api/domain/model"
 )
 
 type IUserRepository interface {

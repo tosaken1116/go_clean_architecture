@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"go-clean-archtecture/api/domain/service"
-	usecase_model "go-clean-archtecture/api/usecase/model"
+	"go-clean-architecture/api/domain/service"
+	usecase_model "go-clean-architecture/api/usecase/model"
 )
 
 type IUserUsecase interface{

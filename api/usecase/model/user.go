@@ -1,7 +1,7 @@
 package model
 
 import (
-	"go-clean-archtecture/api/domain/model"
+	"go-clean-architecture/api/domain/model"
 	"time"
 
 	"github.com/google/uuid"

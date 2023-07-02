@@ -1,7 +1,7 @@
 version: "3"
 services:
     api:
-        container_name: "clean_archtecture_api"
+        container_name: "clean_architecture_api"
         build: .
         volumes:
         - .:/go/src/api
@@ -12,7 +12,7 @@ services:
         depends_on:
         - db
     db:
-        container_name: clean-archtecture-db
+        container_name: clean-architecture-db
         image: postgres:15.2-alpine
         volumes:
         - dbdata:/var/lib/postgresql/data
@@ -22,7 +22,7 @@ services:
         - .env
         tty: true
     adminer:
-        container_name: clean-archtecture-adminer
+        container_name: clean-architecture-adminer
         image: adminer:4.7.5
         restart: always
         ports:
@@ -32,4 +32,4 @@ services:
 
 volumes:
     dbdata:
-        name: go_clean_archtecture
+        name: go_clean_architecture

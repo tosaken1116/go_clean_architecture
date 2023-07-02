@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"go-clean-archtecture/api/usecase"
-	"go-clean-archtecture/api/usecase/model"
+	"go-clean-architecture/api/usecase"
+	"go-clean-architecture/api/usecase/model"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

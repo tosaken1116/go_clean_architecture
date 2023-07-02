@@ -1,11 +1,11 @@
 package router
 
 import (
-	"go-clean-archtecture/api/adapter/http/handler"
-	"go-clean-archtecture/api/domain/service"
-	"go-clean-archtecture/api/infra"
-	"go-clean-archtecture/api/infra/postgres"
-	"go-clean-archtecture/api/usecase"
+	"go-clean-architecture/api/adapter/http/handler"
+	"go-clean-architecture/api/domain/service"
+	"go-clean-architecture/api/infra"
+	"go-clean-architecture/api/infra/postgres"
+	"go-clean-architecture/api/usecase"
 
 	"github.com/gin-gonic/gin"
 )

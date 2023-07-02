@@ -2,9 +2,8 @@ package postgres
 
 import (
 	"errors"
-	"fmt"
-	"go-clean-archtecture/api/domain/model"
-	"go-clean-archtecture/api/domain/repository"
+	"go-clean-architecture/api/domain/model"
+	"go-clean-architecture/api/domain/repository"
 
 	"gorm.io/gorm"
 )
