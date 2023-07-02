@@ -38,6 +38,7 @@ func UserFromPostModel(m *PostUser) model.User{
 	hashedPassword,_ :=bcrypt.GenerateFromPassword([]byte(m.Password),10)
 	u := &model.User{
 		ID: uuid.New().String(),
+		Email: m.Email,
 		ScreenID: m.ScreenID,
 		PasswordHash: string(hashedPassword),
 		UserName: m.UserName,

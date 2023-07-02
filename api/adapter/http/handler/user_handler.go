@@ -20,9 +20,14 @@ func NewUserHandler(uu usecase.IUserUsecase) *userHandler{
 
 func (uh *userHandler) CreateNewUser() gin.HandlerFunc{
 	return func(c *gin.Context) {
-		newUser:= model.PostUser{}
-		c.ShouldBindJSON(newUser)
-		user,err := uh.usecase.CreateNewUser(newUser)
+		newUser:= new(model.PostUser)
+		if err := c.ShouldBindJSON(newUser); err != nil {
+			c.JSON(http.StatusUnprocessableEntity, gin.H{
+				"message": "parse failed",
+			})
+		}
+
+		user,err := uh.usecase.CreateNewUser(*newUser)
 		if err != nil{
 			c.JSON(http.StatusInternalServerError, gin.H{
 				"message": "create failed",
