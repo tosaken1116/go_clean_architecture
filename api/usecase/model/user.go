@@ -17,10 +17,10 @@ type User struct {
 }
 
 type PostUser struct {
-	UserName string `json:"user_name"`
-	Email string `json:"email"`
-	Password string `json:"password"`
-	ScreenID string `json:"screen_id"`
+	UserName string `json:"user_name" binding:"required"`
+	Email string `json:"email" binding:"required"`
+	Password string `json:"password" binding:"required"`
+	ScreenID string `json:"screen_id" binding:"required"`
 }
 
 func UserFromDomainModel(m *model.User) *User{

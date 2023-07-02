@@ -25,6 +25,7 @@ func (uh *userHandler) CreateNewUser() gin.HandlerFunc{
 			c.JSON(http.StatusUnprocessableEntity, gin.H{
 				"message": "parse failed",
 			})
+			return
 		}
 
 		user,err := uh.usecase.CreateNewUser(*newUser)
