@@ -9,6 +9,7 @@ require (
 	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
 	github.com/jackc/pgx/v5 v5.4.1 // indirect
 	github.com/jinzhu/gorm v1.9.16 // indirect
+	golang.org/x/exp v0.0.0-20230626212559-97b1e661b5df // indirect
 )
 
 require (

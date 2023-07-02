@@ -6,5 +6,6 @@ import (
 
 type IUserRepository interface {
 	CreateNewUser(u model.User) (model.User, error)
+	GetAllScreenId(screenId string)(bool, error)
 }
 

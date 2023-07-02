@@ -17,4 +17,5 @@ func InitUserRouter(ur *gin.RouterGroup){
 	userUsecase := usecase.NewUserUsecase(userService)
 	userHandler := handler.NewUserHandler(userUsecase)
 	ur.POST("/create",userHandler.CreateNewUser())
+	ur.GET("/check_screen_id/:screen_id",userHandler.CheckScreenId())
 }

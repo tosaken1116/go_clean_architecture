@@ -7,6 +7,7 @@ import (
 
 type IUserUsecase interface{
 	CreateNewUser(u usecase_model.PostUser) (*usecase_model.User,error)
+	CheckScreenId(screen_id string) (*bool,error)
 }
 
 type userUsecase struct{
@@ -27,4 +28,11 @@ func (uu *userUsecase) CreateNewUser(postUser usecase_model.PostUser) (*usecase_
 	}
 	user:= usecase_model.UserFromDomainModel(&u)
 	return user,nil
+}
+func (uu *userUsecase) CheckScreenId(screenId string) (*bool,error){
+	isDuplicate,err := uu.svc.CheckScreenId(screenId)
+	if err != nil{
+		return nil,err
+	}
+	return isDuplicate,nil
 }

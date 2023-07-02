@@ -40,3 +40,18 @@ func (uh *userHandler) CreateNewUser() gin.HandlerFunc{
 		}
 	}
 }
+
+func (uh *userHandler) CheckScreenId() gin.HandlerFunc{
+	return func(c *gin.Context) {
+		isDuplicate,err := uh.usecase.CheckScreenId(c.Param("screen_id"))
+		if err != nil{
+			c.JSON(http.StatusInternalServerError, gin.H{
+				"message": "check failed",
+			})
+		}else{
+			c.JSON(http.StatusOK, gin.H{
+				"data":isDuplicate,
+			})
+		}
+	}
+}
